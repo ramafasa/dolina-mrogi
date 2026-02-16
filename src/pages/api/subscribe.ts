@@ -42,7 +42,7 @@ export const POST: APIRoute = async ({ request }) => {
         fields: {
           city: city || '',
         },
-        groups: [], // Add MailerLite group IDs here if needed
+        groups: ['179554260132824667'],
       }),
     });
 
