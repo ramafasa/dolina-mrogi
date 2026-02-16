@@ -1,0 +1,61 @@
+---
+const faqs = [
+  {
+    q: 'Kiedy ruszacie z dostawami?',
+    a: 'Planujemy start na wiosnę 2026. Zapisz się na listę, a powiadomimy Cię jako pierwszą/ego!',
+  },
+  {
+    q: 'Jak często mogę zamawiać?',
+    a: 'Dostawy planujemy 2 razy w tygodniu — w stały dzień, który wybierzesz przy zamówieniu.',
+  },
+  {
+    q: 'Skąd pochodzą Wasze produkty?',
+    a: 'Współpracujemy z gospodarstwami z Doliny Mrogi i okolic — Jeżów, Rogów, Brzeziny. Znamy osobiście każdego rolnika.',
+  },
+  {
+    q: 'Czy produkty są ekologiczne/bio?',
+    a: 'Nie wszystkie mają certyfikat eko, ale każde gospodarstwo stosuje tradycyjne metody hodowli i uprawy. Stawiamy na jakość, nie etykiety.',
+  },
+  {
+    q: 'Jak wygląda dostawa? Czy produkty są schłodzone?',
+    a: 'Tak — dowozimy w opakowaniach termoizolacyjnych z wkładami chłodzącymi. Mięso i nabiał zachowują świeżość.',
+  },
+  {
+    q: 'Czy mogę odebrać zamówienie osobiście?',
+    a: 'Na start oferujemy wyłącznie dostawę pod drzwi. Odbiór osobisty planujemy w przyszłości.',
+  },
+  {
+    q: 'Jak mogę się z Wami skontaktować?',
+    a: 'Napisz na kontakt@dolina-mrogi.pl — odpowiadamy w ciągu 24 godzin.',
+  },
+];
+---
+
+<section class="bg-cream py-16 sm:py-24">
+  <div class="mx-auto max-w-3xl px-4">
+    <h2 class="text-center font-serif text-3xl font-bold text-forest sm:text-4xl">
+      Najczęściej zadawane pytania
+    </h2>
+    <div class="mt-10 space-y-3">
+      {faqs.map((faq) => (
+        <details class="group rounded-xl bg-white shadow-sm">
+          <summary class="flex cursor-pointer items-center justify-between px-6 py-4 font-medium text-warm-brown transition hover:text-forest [&::-webkit-details-marker]:hidden">
+            <span>{faq.q}</span>
+            <svg
+              class="ml-4 h-5 w-5 shrink-0 text-warm-brown/40 transition-transform group-open:rotate-180"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-4 text-sm leading-relaxed text-warm-brown/70">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

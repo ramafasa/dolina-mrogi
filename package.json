@@ -1,0 +1,18 @@
+{
+  "name": "dolina-mrogi",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/vercel": "^9.0.4",
+    "@fontsource/cormorant": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "astro": "^5.17.2",
+    "tailwindcss": "^3.4.19"
+  }
+}
