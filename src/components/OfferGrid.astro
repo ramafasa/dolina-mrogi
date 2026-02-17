@@ -1,4 +1,11 @@
 ---
+const featured = {
+  name: 'Dziczyzna',
+  desc: 'Sarnina, dzik i jeleń prosto z lasów centralnej Polski — mięso dla prawdziwych koneserów naturalnego smaku. Dziczyzna jest niezwykle bogata w białko, żelazo i cynk, a jednocześnie ma znacznie mniej tłuszczu niż tradycyjne mięso hodowlane. Zwierzęta żyją na wolności, żywią się naturalnym pokarmem i nie są poddawane antybiotykom ani hormonom wzrostu. To mięso o intensywnym, wyrazistym smaku — idealne na wolno pieczone ragout, stek z polędwicy sarniej czy domowy pasztet z dzika.',
+  gradient: 'from-emerald-100 to-emerald-50',
+  image: '/images/dziczyzna.jpg',
+};
+
 const products = [
   {
     name: 'Jaja z wolnego wybiegu',
@@ -11,12 +18,6 @@ const products = [
     desc: 'Mięso z lokalnych gospodarstw — bez antybiotyków i hormonów.',
     gradient: 'from-rose-100 to-rose-50',
     image: '/images/mieso.jpg',
-  },
-  {
-    name: 'Dziczyzna',
-    desc: 'Sarnina, dzik i jeleń — dla koneserów naturalnego smaku.',
-    gradient: 'from-emerald-100 to-emerald-50',
-    image: '/images/dziczyzna.jpg',
   },
   {
     name: 'Miód z lokalnych pasiek',
@@ -35,7 +36,27 @@ const products = [
     <p class="mx-auto mt-4 max-w-xl text-center text-warm-brown/70">
       Starannie wyselekcjonowane produkty od sprawdzonych rolników z okolic Doliny Mrogi.
     </p>
-    <div class="mt-12 grid gap-6 sm:grid-cols-2">
+
+    <!-- Wyróżniona dziczyzna -->
+    <div class="mt-12 group overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-emerald-200 transition hover:shadow-lg">
+      <div class="grid sm:grid-cols-2">
+        <div class="aspect-[16/9] sm:aspect-auto overflow-hidden">
+          <img
+            src={featured.image}
+            alt={featured.name}
+            class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          />
+        </div>
+        <div class={`bg-gradient-to-br ${featured.gradient} p-8 flex flex-col justify-center`}>
+          <span class="mb-3 inline-block w-fit rounded-full bg-emerald-700/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-800">Polecamy</span>
+          <h3 class="font-serif text-2xl font-bold text-warm-brown sm:text-3xl">{featured.name}</h3>
+          <p class="mt-4 text-sm leading-relaxed text-warm-brown/70">{featured.desc}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pozostałe produkty -->
+    <div class="mt-6 grid gap-6 sm:grid-cols-3">
       {products.map((p) => (
         <div class="group overflow-hidden rounded-2xl bg-white shadow-sm transition hover:shadow-md">
           <div class="aspect-[16/9] overflow-hidden">
